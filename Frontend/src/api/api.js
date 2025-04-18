@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL:"https://robomania.wceelesa.org.in/api",
+    baseURL:"https://robomania-frontend.onrender.com/api",
     withCredentials: true,
 })
 
