@@ -42,7 +42,7 @@ app.use(session({
 const server = http.createServer(app);
 const io= new Server(server,{
   cors:{
-    origin:"https://robomania-frontend.onrender.com",
+    origin:process.env.CORS_ORIGIN,
     credentials: true,
   }
 })
