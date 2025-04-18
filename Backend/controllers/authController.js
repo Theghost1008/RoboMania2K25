@@ -26,7 +26,7 @@ const login=async(req,res)=>{
             const options={
                 httpOnly: true,
                 secure: false,
-                sameSite: "Lax",
+                sameSite: "none",
                 maxAge: 15 * 60 * 1000,
             }
             res.cookie('refreshToken', refreshToken, options).cookie('accessToken', accessToken,options).json({accessToken,Admin:Admin})
