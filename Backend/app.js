@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import session from "express-session";
+import MongoStore from "connect-mongo";
 import { Server } from "socket.io";
 import cookieParser from "cookie-parser";
 import http from "http"
@@ -26,6 +27,10 @@ app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
+    store:MongoStore.create({
+      mongoUrl:process.env.MONGODB_URL,
+      collectionName:"sessions",
+    }),
     cookie: {
       httpOnly: true,
       secure: true,

@@ -18,7 +18,6 @@ const generateRefresh = ()=>{
 const login=async(req,res)=>{
     try{
         const {username, password} = req.body
-        console.log(password)
         if(!username || !password)
             return res.status(400).json({message:"username and password are required"});
         if(username===Admin.username && password===Admin.password){
