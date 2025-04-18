@@ -57,6 +57,11 @@ const Home = ()=>{
                 </Link>
                 </div>
             </div>
+            <Link to="/log">
+                <button className="fixed bottom-4 left-4 bg-white text-gray-300 px-4 py-2 rounded shadow hover:bg-gray-100 hover:text-black text-sm md:text-base z-50 opacity-10 hover:opacity-40 transition-opacity">
+                    Admin Login
+                </button>
+            </Link>
         </div>
     )
 }
