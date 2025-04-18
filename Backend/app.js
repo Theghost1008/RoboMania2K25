@@ -8,6 +8,7 @@ import cookieParser from "cookie-parser";
 import http from "http"
 import matchRoutes from "./routes/match.routes.js";
 import authRoutes from "./routes/auth.routes.js";
+import path from "path";
 
 const app=express();
 dotenv.config();
@@ -15,6 +16,9 @@ dotenv.config();
 app.use(express.json())
 app.use(express.urlencoded({extended:true, limit:"16kb"}))
 app.use(express.static("public"))
+app.get("*", (req, res) => {
+  res.sendFile(path.join(path.resolve(), "client", "dist", "index.html"));
+});
 app.use(cors({
   origin: process.env.CORS_ORIGIN,
   credentials: true,
