@@ -25,7 +25,7 @@ const login=async(req,res)=>{
             const refreshToken = generateRefresh();
             const options={
                 httpOnly: true,
-                secure: false,
+                secure: true,
                 sameSite: "none",
                 maxAge: 15 * 60 * 1000,
             }
