@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "../api/api.js";
 import io from "socket.io-client";
 
-const socket = io("https://robomania-backend.onrender.com", { withCredentials: true });
+const socket = io("hhttps://robomania.wceelesa.org.in", { withCredentials: true });
 
 const AdminPanel = () => {
   const [matches, setMatches] = useState([]);
